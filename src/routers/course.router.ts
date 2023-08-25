@@ -9,6 +9,6 @@ courseRouter.post("", ensureTokenIsValid, ensureIsAdminToken, ensureDataIsValid(
 courseRouter.post("/:courseId/users/:userId", ensureTokenIsValid, ensureIsAdminToken, courseController.addUsersToCourses);
 courseRouter.get("", courseController.retrieve);
 courseRouter.get("/:id/users", ensureTokenIsValid, ensureIsAdminToken, courseController.listUsersInCourses);
-courseRouter.delete("/:courseId/users/:userId", ensureTokenIsValid, ensureIsAdminToken, courseController.destroyUserCourses)
+courseRouter.delete("/:courseId/users/:userId", ensureTokenIsValid, ensureIsAdminToken, courseController.destroyUserCourses);
 
 export { courseRouter };

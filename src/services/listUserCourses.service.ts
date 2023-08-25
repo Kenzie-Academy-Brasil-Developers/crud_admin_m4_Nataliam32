@@ -23,7 +23,7 @@ const list = async (userId: string) => {
     const queryResult = await client.query(queryString, [userId]);
 
     if(queryResult.rowCount === 0) {
-        throw new AppError("No course found.", 404);
+        throw new AppError("No course found", 404);
     };
 
     return queryResult.rows;

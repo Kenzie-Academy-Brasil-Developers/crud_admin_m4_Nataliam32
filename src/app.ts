@@ -1,4 +1,5 @@
-import express, { Application, json } from 'express'
+import "express-async-errors";
+import express, { Application, json } from 'express';
 import { userRouter } from './routers/user.router';
 import { sessionRouter } from './routers/session.router';
 import { courseRouter } from './routers/course.router';

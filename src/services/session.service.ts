@@ -11,13 +11,13 @@ const create = async (payload: SessionRequest): Promise<string> => {
     const queryResult: UserQueryResult = await client.query(queryString, [payload.email]);
 
     if(queryResult.rowCount === 0){
-        throw new AppError("Wrong email/password.", 401);
+        throw new AppError("Wrong email/password", 401);
     };
 
     const matchPassword: boolean = await compare(payload.password, queryResult.rows[0].password);
 
     if(!matchPassword){
-        throw new AppError("Wrong email/password.", 401);
+        throw new AppError("Wrong email/password", 401);
     };
 
     const token: string = sign(

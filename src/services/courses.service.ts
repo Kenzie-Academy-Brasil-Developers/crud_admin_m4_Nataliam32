@@ -34,7 +34,7 @@ const addUsersToCourses = async (courseId: string, userId: string): Promise<void
         )
     } else {
         throw new AppError("User/course not found", 404)
-    }
+    };
 };
 
 const listUsersInCourses = async(payload: number): Promise<UserCourseCostumized[]> => {
@@ -57,7 +57,7 @@ const listUsersInCourses = async(payload: number): Promise<UserCourseCostumized[
     const queryResult = await client.query(queryString, [payload]);
 
     return queryResult.rows;
-}
+};
 
 const destroyUserCourses = async (courseId: number, userId: number): Promise<void> => {
     const queryResultUser: UserQueryResult = await client.query(`SELECT id FROM users WHERE id = $1`, [userId]);

@@ -23,5 +23,6 @@ const retrieve = async (): Promise<UserRead> => {
     const queryResult: UserQueryResult = await client.query(`SELECT * FROM users;`);
 
     return userReadSchema.parse(queryResult.rows);
-}
+};
+
 export default { create, retrieve };

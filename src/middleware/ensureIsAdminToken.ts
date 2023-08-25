@@ -5,10 +5,10 @@ const ensureIsAdminToken = async (req: Request, res: Response, next: NextFunctio
     const { admin } = res.locals.decoded;
 
     if(!admin) {
-        throw new AppError("Insuficient permission", 403);
+        throw new AppError("Insufficient permission", 403);
     };
 
     return next();
-}
+};
 
 export default ensureIsAdminToken; 
